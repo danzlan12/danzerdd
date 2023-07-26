@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ardana Porto's</title>
+
+    <!-- css -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- fontawesome -->
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+
+    <!-- font Family Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <!-- smooth scrool -->
+    <style>
+        html {
+            scroll-behavior: smooth;    
+        }
+    </style>
+
+    
+
+</head>
+<body class="bg-gray-800 font-poppins overscroll-auto">
+<!-- Alpine js -->
+<script defer src="https://unpkg.com/alpinejs@3.2.3/dist/cdn.min.js"></script>
+
+<div class="bg-gray-600" x-data="topBtn">
+    <button @click="scrolltoTop" id="topButton"
+        class="text-3xl text-green-700 fixed z-10 hidden opacity-80  bottom-5 right-5">
+        <i class="fas fa-arrow-circle-up"></i>
+    </button>
+</div>
+
+
+<!-- navbar start -->
+<div class="container">
+    <div class="flex flex-col md:flex-row px-4">
+        <div class="flex justify-between items-center px-4 py-4 md:py-0 border-b border-gray-700 md:border-b-0">
+            <div class=""><a href="#" class="uppercase font-semibold text-gray-100 md:mr-4 tracking-widest">Danzerdd</a></div>
+            <div class="nav-toggler">
+                <button class="items-center">
+                    <svg class="transition duration-500 ease-in-out w-6 h-6 outline-none text-gray-100 block md:hidden" className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clipRule="evenodd" /></svg>
+                </button>
+            </div>
+        </div>
+        <div class="transition duration-500 ease-in-out nav md:flex hidden flex-col md:flex-row justify-between w-full py-4 md:py-0 md:bg-transparent bg-gray-700 rounded-xl">
+            <div class="transition duration-500 ease-in-out flex flex-col md:flex-row md:gap-4"></div>
+
+            <!-- navs -->
+            <div class="transition duration-500 ease-in-out flex flex-col md:flex-row md:gap-4 p-4">
+                <a href="/danzerdd/" class="block px-4 py-2 md:py-1 rounded-md md:my-2 text-gray-100 md:text-left text-center hover:bg-gray-800 transition duration-200 ease-in-out">Portfolio</a>
+                <a href="/danzerdd/" class="block px-4 py-2 md:py-1 rounded-md my-2 text-gray-100 md:text-left text-center hover:bg-gray-800 transition duration-200 ease-in-out">Blog</a>
+                <a href="/danzerdd/" class="block px-4 py-2 md:py-1 rounded-md my-2 text-gray-100 md:text-left text-center hover:bg-gray-800 transition duration-200 ease-in-out">About</a>
+            </div>
+
+            <!-- social for desktop -->
+            <div class="flex flex-col md:flex-row md:gap-3 md:items-center">
+                <a href="https://facebook.com/danzlan/" class="hidden md:block px-4 py-2 md:py-1 rounded-md my-2 text-gray-100 "><i class="fab fa-facebook-f text-xl"></i></a>
+                <a href="https://www.twitter.com/danzerdd" class="hidden md:block px-4 py-2 md:py-1 rounded-md my-2 text-gray-100 "><i class="fab fa-twitter text-xl"></i></a>
+                <a href="https://www.instagram.com/danzerdd/" class="hidden md:block px-4 py-2 md:py-1 rounded-md my-2 text-gray-100 "><i class="fab fa-instagram text-xl"></i></a>
+                
+                <!-- social for mobile -->
+                <div class="flex md:hidden align-center justify-around">
+                <a href="https://github.com/danzlan12"><i class="text-gray-50 hover:text-gray-300 transition duration-300 ease-in-out fab fa-github text-xl"></i></a>
+                <a href="https://www.linkedin.com/in/ardanafirmansyah"><i class="text-gray-50 hover:text-gray-300 transition duration-300 ease-in-out fab fa-linkedin-in text-xl"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- navbar end -->
+
+    <!-- main page -->
+    <section class="mt-10">
+        <div class="mx-4 text-gray-50">
+            <h2 class="text-center block text-xl lg:text-4xl">Desain Green Park Wonokoyo</h2>
+        </div>
+        <div class="flex justify-between items-center mx-4 py-6 border-b border-gray-700 md:border-b-0"> </div>
+
+    </section>
+
+    <!-- To Top -->
+    <script>
+        document.addEventListener('alpine:init', () => {
+            Alpine.data('topBtn', () => ({
+                scrolltoTop() {
+                    document.body.scrollTop = 0;
+                    document.documentElement.scrollTop = 0;
+                }
+            }));
+        });
+    
+        var topBtn = document.getElementById("topButton");
+        window.onscroll = function () {
+            (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) ?
+            topBtn.classList.remove("hidden"): topBtn.classList.add("hidden");
+    
+        }
+    </script>
+
+    <section class="portfolio">
+        <div class="px-10 mt-5 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 gap-5">
+
+            <!--Card 1-->
+            <div class="rounded-3xl overflow-hidden bg-gray-700">
+            <img class="w-full rounded-t-3xl h-full" src="assets/images//gpw/gpw1.png" alt="BloodBank">
+            </div>
+
+            <!--Card 2-->
+            <div class="rounded-3xl overflow-hidden bg-gray-700">
+            <img class="w-full rounded-t-3xl h-full" src="assets/images//gpw/gpw2.png" alt="BloodBank">
+            </div>
+
+            <!--Card 3-->
+            <div class="rounded-3xl overflow-hidden bg-gray-700">
+            <img class="w-full rounded-t-3xl h-full" src="assets/images//gpw/gpw3.png" alt="BloodBank">
+            </div>
+
+            <!--Card 4-->
+            <div class="rounded-3xl overflow-hidden bg-gray-700">
+            <img class="w-full rounded-t-3xl h-full" src="assets/images//gpw/gpw4.png" alt="BloodBank">
+            </div>
+
+            <!--Card 5-->
+            <div class="rounded-3xl overflow-hidden bg-gray-700">
+            <img class="w-full rounded-t-3xl h-full" src="assets/images//gpw/gpw5.png" alt="BloodBank">
+            </div>
+
+            <!--Card 6-->
+            <div class="rounded-3xl overflow-hidden bg-gray-700">
+            <img class="w-full rounded-t-3xl h-full" src="assets/images//gpw/gpw6.png" alt="BloodBank">
+            </div>
+
+            <!--Card 7-->
+            <div class="rounded-3xl overflow-hidden bg-gray-700">
+            <img class="w-full rounded-t-3xl h-full" src="assets/images//gpw/gpw7.png" alt="BloodBank">
+            </div>
+
+            <!--Card 8-->
+            <div class="rounded-3xl overflow-hidden bg-gray-700">
+            <img class="w-full rounded-t-3xl h-full" src="assets/images//gpw/gpw8.png" alt="BloodBank">
+            </div>
+
+            <!--Card 9-->
+            <div class="rounded-3xl overflow-hidden bg-gray-700">
+            <img class="w-full rounded-t-3xl h-full" src="assets/images//gpw/gpw9.png" alt="BloodBank">
+            </div>
+
+            <!--Card 10-->
+            <div class="rounded-3xl overflow-hidden bg-gray-700">
+            <img class="w-full rounded-t-3xl h-full" src="assets/images//gpw/gpw10.png" alt="BloodBank">
+            </div>
+
+            <!--Card 11-->
+            <div class="rounded-3xl overflow-hidden bg-gray-700">
+            <img class="w-full rounded-t-3xl h-full" src="assets/images//gpw/gpw11.png" alt="BloodBank">
+            </div>
+
+            <!--Card 12-->
+            <div class="rounded-3xl overflow-hidden bg-gray-700">
+            <img class="w-full rounded-t-3xl h-full" src="assets/images//gpw/gpw12.png" alt="BloodBank">
+            </div>
+
+            <!--Card 13-->
+            <div class="rounded-3xl overflow-hidden bg-gray-700">
+            <img class="w-full rounded-t-3xl h-full" src="assets/images//gpw/gpw13.png" alt="BloodBank">
+            </div>
+
+            <!--Card 14-->
+            <div class="rounded-3xl overflow-hidden bg-gray-700">
+            <img class="w-full rounded-t-3xl h-full" src="assets/images//gpw/gpw14.png" alt="BloodBank">
+            </div>
+
+            <!--Card 15-->
+            <div class="rounded-3xl overflow-hidden bg-gray-700">
+            <img class="w-full rounded-t-3xl h-full" src="assets/images//gpw/gpw15.png" alt="BloodBank">
+            </div>
+
+            <!--Card 16-->
+            <div class="rounded-3xl overflow-hidden bg-gray-700">
+            <img class="w-full rounded-t-3xl h-full" src="assets/images//gpw/gpw16.png" alt="BloodBank">
+            </div>
+
+            <!--Card 17-->
+            <div class="rounded-3xl overflow-hidden bg-gray-700">
+            <img class="w-full rounded-t-3xl h-full" src="assets/images//gpw/gpw17.png" alt="BloodBank">
+            </div>
+
+            <!--Card 18-->
+            <div class="rounded-3xl overflow-hidden bg-gray-700">
+            <img class="w-full rounded-t-3xl h-full" src="assets/images//gpw/gpw18.png" alt="BloodBank">
+            </div>
+        </div>
+    
+    </section>
+
+<!-- ================== TIDAK BOLEH DIHAPUS ========================== -->
+<!-- Copyright Resa Endrawan https://www.facebook.com/resa.endrawan56/ -->
+<div class="footer mt-16 bg-gray-700 py-4 text-gray-50">
+    <div class="text-center">
+        <span>2022 &copy; Made with love by <a href="/" class="font-semibold hover:text-gray-800">danzerdd</a></span>
+    </div>
+</div>
+
+<script src="js/hamburger.js"></script>
+</body>
+</html>

@@ -691,6 +691,10 @@ video {
   width: 100%;
 }
 
+.h-full{
+  height: 100%;
+}
+
 @-webkit-keyframes spin {
   to {
     transform: rotate(360deg);
